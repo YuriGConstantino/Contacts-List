@@ -1,7 +1,24 @@
+import * as S from './styles'
+import Task from '../../components/Task'
+
 const ContactsList = () => (
-  <main>
+  <S.Container>
     <p>Numeros de Contatos: Num</p>
-  </main>
+    <ul>
+      <li>
+        <Task />
+      </li>
+      <li>
+        <Task />
+      </li>
+      <li>
+        <Task />
+      </li>
+      <li>
+        <Task />
+      </li>
+    </ul>
+  </S.Container>
 )
 
 export default ContactsList
