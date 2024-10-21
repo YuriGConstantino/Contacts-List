@@ -7,9 +7,10 @@ type PropsWithoutLabelAndCounter = Omit<Props, 'label' | 'counter'>
 export const Card = styled.div<PropsWithoutLabelAndCounter>`
   padding: 8px;
   border: 1px solid ${(props) => (props.active ? '#1e90ff' : '#a1a1a1')};
-  background-color: ${(props) => (props.active ? '#fff' : '#fcfcfc')};
-  color: ${(props) => (props.active ? '#1e90ff' : '#5e5e5e')};
+  background-color: ${(props) => (props.active ? '#fefefe' : '#202020')};
+  color: ${(props) => (props.active ? '#1e90ff' : '#d5d5d5')};
   border-radius: 8px;
+  text-shadow: 2px 1px 5px rgba(0, 0, 0, 0.4);
 `
 
 export const Counter = styled.span`
