@@ -1,18 +1,20 @@
 import { useState } from 'react'
 import * as S from './styles'
 
+import * as enums from '../../ultils/enums/Contact'
+
 type Props = {
   title: string
   phoneNumber: string
   email: string
+  group: enums.Group
 }
 
-const ContactCard = ({ title, phoneNumber, email }: Props) => {
-  const [editing, setEditing] = useState(true)
-
+const ContactCard = ({ title, phoneNumber, email, group }: Props) => {
+  const [editing, setEditing] = useState(false)
   return (
     <S.Card>
-      <S.Container>
+      <S.Container group={group}>
         <S.Avatar src="https://dummyimage.com/80x80.png"></S.Avatar>
         <S.Title>{title}</S.Title>
       </S.Container>

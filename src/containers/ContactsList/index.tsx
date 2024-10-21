@@ -1,11 +1,14 @@
 import * as S from './styles'
 import ContactCard from '../../components/ContactCard'
 
+import * as enums from '../../ultils/enums/Contact'
+
 const contacts = [
   {
     title: 'fasop',
     phoneNumber: 'xxxx-xxxx',
-    email: 'relvufi@zukib.ms'
+    email: 'relvufi@zukib.ms',
+    group: enums.Group.FAMILY
   }
 ]
 
@@ -19,6 +22,7 @@ const ContactsList = () => (
             title={c.title}
             phoneNumber={c.phoneNumber}
             email={c.email}
+            group={c.group}
           />
         </li>
       ))}

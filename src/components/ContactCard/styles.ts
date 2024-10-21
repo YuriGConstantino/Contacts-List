@@ -1,18 +1,34 @@
 import styled from 'styled-components'
 import variaveis from '../../styles/variaveis'
 
+import * as enums from '../../ultils/enums/Contact'
+
+type GroupProps = {
+  group?: enums.Group
+}
+
+function BackGroundGroupColor(props: GroupProps): string {
+  if ('group' in props) {
+    if (props.group === enums.Group.FAMILY) return variaveis.blue
+    if (props.group === enums.Group.FRIENDS) return variaveis.green
+    if (props.group === enums.Group.WORK) return variaveis.yellow
+    if (props.group === enums.Group.EMERGENCY) return variaveis.red
+  }
+  return '#ccc'
+}
+
 export const Card = styled.div`
   background-color: #212121;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin-bottom: 32px;
   border-radius: 16px;
 `
-export const Container = styled.div`
+export const Container = styled.div<GroupProps>`
   display: flex;
   align-items: center;
   gap: 24px;
   margin-bottom: 24px;
-  background-color: #e1a32a;
+  background-color: ${(props) => BackGroundGroupColor(props)};
   padding: 16px;
 `
 export const Avatar = styled.img`
