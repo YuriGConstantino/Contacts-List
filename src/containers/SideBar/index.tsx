@@ -9,7 +9,7 @@ const SideBar = () => (
         <FilterCard label="Familia" counter={1} />
         <FilterCard label="Amigos" counter={1} />
         <FilterCard label="Trabalho" counter={1} />
-        <FilterCard label="Emergencia" counter={1} />
+        <FilterCard label="Outros" counter={1} />
         <FilterCard label="Total" counter={4} active />
       </S.Filters>
     </div>

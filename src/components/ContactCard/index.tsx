@@ -1,16 +1,13 @@
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import * as S from './styles'
+import { remove } from '../../store/reducers/contact'
+import Contact from '../../models/contact'
 
-import * as enums from '../../ultils/enums/Contact'
+type Props = Contact
 
-type Props = {
-  title: string
-  phoneNumber: string
-  email: string
-  group: enums.Group
-}
-
-const ContactCard = ({ title, phoneNumber, email, group }: Props) => {
+const ContactCard = ({ title, phoneNumber, email, group, id }: Props) => {
+  const dispatch = useDispatch()
   const [editing, setEditing] = useState(false)
   return (
     <S.Card>
@@ -33,7 +30,9 @@ const ContactCard = ({ title, phoneNumber, email, group }: Props) => {
         ) : (
           <>
             <S.Button onClick={() => setEditing(true)}>Editar</S.Button>
-            <S.CancelRemoveButton>Remover</S.CancelRemoveButton>
+            <S.CancelRemoveButton onClick={() => dispatch(remove(id))}>
+              Remover
+            </S.CancelRemoveButton>
           </>
         )}
       </S.ActionBar>

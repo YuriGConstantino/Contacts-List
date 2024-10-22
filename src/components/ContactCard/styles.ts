@@ -12,9 +12,8 @@ function BackGroundGroupColor(props: GroupProps): string {
     if (props.group === enums.Group.FAMILY) return variaveis.blue
     if (props.group === enums.Group.FRIENDS) return variaveis.green
     if (props.group === enums.Group.WORK) return variaveis.yellow
-    if (props.group === enums.Group.EMERGENCY) return variaveis.red
   }
-  return '#ccc'
+  return variaveis.white
 }
 
 export const Card = styled.div`
