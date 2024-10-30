@@ -29,6 +29,7 @@ export const Container = styled.div<GroupProps>`
   margin-bottom: 24px;
   background-color: ${(props) => BackGroundGroupColor(props)};
   padding: 16px;
+  border-radius: 16px 16px 0 0;
 `
 export const Avatar = styled.img`
   border-radius: 100%;

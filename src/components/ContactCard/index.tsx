@@ -1,10 +1,16 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import * as S from './styles'
 import { remove } from '../../store/reducers/contact'
-import Contact from '../../models/contact'
+import * as S from './styles'
+import * as enums from '../../ultils/enums/Contact'
 
-type Props = Contact
+type Props = {
+  title: string
+  phoneNumber: string
+  email: string
+  group: enums.Group
+  id: number
+}
 
 const ContactCard = ({ title, phoneNumber, email, group, id }: Props) => {
   const dispatch = useDispatch()

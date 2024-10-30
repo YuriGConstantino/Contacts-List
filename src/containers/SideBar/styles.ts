@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Aside = styled.aside`
   padding: 16px;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.9);
   height: 100vh;
 `
 
@@ -18,9 +18,10 @@ export const Field = styled.input`
   border: 0;
   border-bottom: 2px solid white;
   outline: 0;
-  color: #fff;
+  color: #efefef;
   font-weight: bold;
   padding: 8px 0;
   background: transparent;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 6px black;
 `

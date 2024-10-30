@@ -1,15 +1,38 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import Contact from '../../models/contact'
 import * as enums from '../../ultils/enums/Contact'
 
 const contactSlice = createSlice({
   name: 'contact',
   initialState: {
     itens: [
-      new Contact('AAAA', 'XXXX-XXX', 'efzo@jeti.tt', enums.Group.FAMILY, 1),
-      new Contact('BBBB', 'XXXX-XXX', 'efzo@jeti.tt', enums.Group.FRIENDS, 2),
-      new Contact('CCCC', 'XXXX-XXX', 'efzo@jeti.tt', enums.Group.WORK, 3),
-      new Contact('DDDD', 'XXXX-XXX', 'efzo@jeti.tt', enums.Group.OUTROS, 4)
+      {
+        title: 'AAAA',
+        phoneNumber: 'XXXX-XXX',
+        email: 'efzo@jeti.tt',
+        group: enums.Group.FAMILY,
+        id: 1
+      },
+      {
+        title: 'BBBB',
+        phoneNumber: 'XXXX-XXX',
+        email: 'efzo@jeti.tt',
+        group: enums.Group.FRIENDS,
+        id: 2
+      },
+      {
+        title: 'CCCC',
+        phoneNumber: 'XXXX-XXX',
+        email: 'efzo@jeti.tt',
+        group: enums.Group.WORK,
+        id: 3
+      },
+      {
+        title: 'DDDD',
+        phoneNumber: 'XXXX-XXX',
+        email: 'efzo@jeti.tt',
+        group: enums.Group.OTHERS,
+        id: 4
+      }
     ]
   },
   reducers: {
