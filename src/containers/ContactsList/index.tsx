@@ -2,6 +2,7 @@ import * as S from './styles'
 import ContactCard from '../../components/ContactCard'
 import { useSelector } from 'react-redux'
 import { RootReducer } from '../../store'
+import ButtonAdd from '../../components/ButtonAdd'
 
 const ContactsList = () => {
   const { itens } = useSelector((state: RootReducer) => state.contact)
@@ -41,6 +42,7 @@ const ContactsList = () => {
           </li>
         ))}
       </ul>
+      <ButtonAdd />
     </S.Container>
   )
 }

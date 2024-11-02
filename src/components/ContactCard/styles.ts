@@ -40,7 +40,7 @@ export const Title = styled.h3`
   font-weight: bold;
 `
 export const ContactInfo = styled.li`
-  color: #8b8b8b;
+  color: #c6c6c6;
   font-size: 16px;
   line-height: 24px;
   display: block;
