@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
+import variaveis from '../../styles/variaveis'
 
 export const ButtonAddIcon = styled(Link)`
   display: flex;
@@ -9,8 +10,8 @@ export const ButtonAddIcon = styled(Link)`
   text-decoration: none;
   height: 64px;
   width: 64px;
-  background-color: #44bd32;
-  color: #fff;
+  background-color: ${variaveis.green};
+  color: ${variaveis.white};
   position: fixed;
   bottom: 40px;
   right: 40px;

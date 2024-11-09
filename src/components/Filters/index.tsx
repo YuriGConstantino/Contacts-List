@@ -6,36 +6,44 @@ import * as enums from '../../ultils/enums/Contact'
 import { RootReducer } from '../../store'
 
 export type Props = {
-  counter: number
   label: string
-  criterion: 'family' | 'friends' | 'work' | 'others' | 'all'
-  group?: enums.Group
+  criterion: 'outros' | 'familia' | 'amigos' | 'trabalho' | 'todos'
+  $group?: enums.$group
 }
 
-const FilterCard = ({ counter, label, criterion, group }: Props) => {
+const FilterCard = ({ label, criterion, $group }: Props) => {
   const dispatch = useDispatch()
-  const { filter } = useSelector((state: RootReducer) => state)
+  const filter = useSelector((state: RootReducer) => state.filter)
+  const contact = useSelector((state: RootReducer) => state.contact)
 
   const checkActive = () => {
     const sameCriterion = filter.criterion === criterion
-    const sameGroup = filter.group === group
+    const same$group = filter.$group === $group
 
-    return sameCriterion && sameGroup
+    return sameCriterion && same$group
+  }
+
+  const couterContact = () => {
+    if (criterion === 'todos') return contact.itens.length
+    if (criterion === criterion) {
+      return contact.itens.filter((item) => item.$group === $group).length
+    }
   }
 
   const handleFilterChange = () => {
     dispatch(
       changeFilter({
         criterion,
-        group
+        $group
       })
     )
   }
 
   const active = checkActive()
+  const counter = couterContact()
 
   return (
-    <S.Card active={active} onClick={handleFilterChange}>
+    <S.Card $active={active} onClick={handleFilterChange}>
       <S.Counter>{counter}</S.Counter>
       <S.Label>{label}</S.Label>
     </S.Card>

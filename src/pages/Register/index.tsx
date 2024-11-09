@@ -1,5 +1,11 @@
-const Register = () => {
-  return <h1>test</h1>
-}
+import { Form } from '../../containers/Form'
+import SideBar from '../../containers/SideBar'
+
+const Register = () => (
+  <>
+    <SideBar showFilters={false} />
+    <Form />
+  </>
+)
 
 export default Register

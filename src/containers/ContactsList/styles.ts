@@ -1,9 +1,7 @@
 import styled from 'styled-components'
 
-export const Container = styled.main`
-  padding: 18px 40px;
-
-  height: 100vh;
-  overflow-y: scroll;
-  background-color: rgba(0, 0, 0, 0.8);
+export const ListContainer = styled.ul`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
 `

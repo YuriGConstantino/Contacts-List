@@ -1,6 +1,6 @@
-export enum Group {
-  FAMILY = 'family',
-  FRIENDS = 'friends',
-  WORK = 'work',
-  OTHERS = 'others'
+export enum $group {
+  OTHERS = 'outros',
+  FAMILY = 'familia',
+  FRIENDS = 'amigos',
+  WORK = 'trabalho'
 }

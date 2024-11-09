@@ -3,13 +3,13 @@ import * as enums from '../../ultils/enums/Contact'
 
 type FilterState = {
   word?: string
-  criterion: 'family' | 'friends' | 'work' | 'others' | 'all'
-  group?: enums.Group
+  criterion: 'outros' | 'familia' | 'amigos' | 'trabalho' | 'todos'
+  $group?: enums.$group
 }
 
 const initialState: FilterState = {
   word: '',
-  criterion: 'all'
+  criterion: 'todos'
 }
 
 const filtersSlice = createSlice({
@@ -21,7 +21,7 @@ const filtersSlice = createSlice({
     },
     changeFilter: (state, action: PayloadAction<FilterState>) => {
       state.criterion = action.payload.criterion
-      state.group = action.payload.group
+      state.$group = action.payload.$group
     }
   }
 })

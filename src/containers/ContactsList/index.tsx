@@ -1,4 +1,5 @@
 import * as S from './styles'
+import { MainContainer } from '../../styles'
 import ContactCard from '../../components/ContactCard'
 import { useSelector } from 'react-redux'
 import { RootReducer } from '../../store'
@@ -6,7 +7,7 @@ import ButtonAdd from '../../components/ButtonAdd'
 
 const ContactsList = () => {
   const { itens } = useSelector((state: RootReducer) => state.contact)
-  const { word, criterion, group } = useSelector(
+  const { word, criterion, $group } = useSelector(
     (state: RootReducer) => state.filter
   )
 
@@ -15,11 +16,11 @@ const ContactsList = () => {
 
     if (word !== undefined) {
       filterContacts = filterContacts.filter(
-        (item) => item.title.toLowerCase().search(word.toLowerCase()) >= 0
+        (item) => item.name.toLowerCase().search(word.toLowerCase()) >= 0
       )
-      if (group === criterion) {
+      if ($group === criterion) {
         filterContacts = filterContacts.filter(
-          (item) => item.group === criterion
+          (item) => item.$group === criterion
         )
       }
       return filterContacts
@@ -28,22 +29,23 @@ const ContactsList = () => {
     }
   }
   return (
-    <S.Container>
-      <ul>
+    <MainContainer>
+      <S.ListContainer>
         {filterContact().map((c) => (
-          <li key={c.title}>
+          <li key={c.name}>
             <ContactCard
-              title={c.title}
+              image={c.image}
+              name={c.name}
               phoneNumber={c.phoneNumber}
               email={c.email}
-              group={c.group}
+              $group={c.$group}
               id={c.id}
             />
           </li>
         ))}
-      </ul>
+      </S.ListContainer>
       <ButtonAdd />
-    </S.Container>
+    </MainContainer>
   )
 }
 
