@@ -1,9 +1,10 @@
-import { Image, MainContainer, SalveButton } from '../../styles'
-import * as S from './styles'
-import { Field } from '../../styles'
 import { FormEvent, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
+import InputMask from 'react-input-mask'
+import { Image, MainContainer, SalveButton } from '../../styles'
+import * as S from './styles'
+import { Field } from '../../styles'
 import * as enums from '../../ultils/enums/Contact'
 import { register } from '../../store/reducers/contact'
 
@@ -69,12 +70,15 @@ export const Form = () => {
           type="text"
           placeholder="Nome Completo"
         />
-        <Field
-          value={phoneNumber}
-          onChange={(e) => setPhoneNumber(e.target.value)}
-          type="number"
-          placeholder="Numero do Telefone"
-        />
+        <S.NumberInputMask>
+          <InputMask
+            mask="(99)99999-9999"
+            maskChar={null}
+            value={phoneNumber}
+            onChange={(e) => setPhoneNumber(e.target.value)}
+            placeholder="Numero do Telefone"
+          />
+        </S.NumberInputMask>
         <Field
           value={email}
           onChange={(e) => setEmail(e.target.value)}
