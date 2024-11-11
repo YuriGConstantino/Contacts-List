@@ -3,6 +3,7 @@ import variaveis from '../../styles/variaveis'
 
 import * as enums from '../../ultils/enums/Contact'
 import { Button } from '../../styles'
+import { Link } from 'react-router-dom'
 
 type $groupProps = {
   $group?: enums.$group
@@ -48,4 +49,15 @@ export const ActionBar = styled.div`
 `
 export const CancelRemoveButton = styled(Button)`
   background-color: ${variaveis.red};
+`
+export const EditButton = styled.button`
+  font-weight: bold;
+  font-size: 12px;
+  color: #fff;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  background-color: #2f3640;
+  margin-right: 8px;
+  border-radius: 8px;
 `

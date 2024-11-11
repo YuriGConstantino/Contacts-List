@@ -52,7 +52,7 @@ const SideBar = ({ showFilters }: Props) => {
             </S.Filters>
           </>
         ) : (
-          <Button onClick={() => navigate('/')}>Voltar para os contados</Button>
+          <Button onClick={() => navigate('/')}>Voltar para os contatos</Button>
         )}
       </div>
     </S.Aside>

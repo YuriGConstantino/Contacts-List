@@ -1,5 +1,5 @@
 import { ButtonAddIcon } from './styles'
 
-const ButtonAdd = () => <ButtonAddIcon to="newcontact">+</ButtonAddIcon>
+const ButtonAdd = () => <ButtonAddIcon to="RegisterAndEdit">+</ButtonAddIcon>
 
 export default ButtonAdd

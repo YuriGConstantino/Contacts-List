@@ -1,16 +1,21 @@
 import { FormEvent, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import InputMask from 'react-input-mask'
-import { Image, MainContainer, SalveButton } from '../../styles'
+import { register } from '../../store/reducers/contact'
+import * as enums from '../../ultils/enums/Contact'
+import {
+  Image,
+  MainContainer,
+  NumberInputMask,
+  SalveButton
+} from '../../styles'
 import * as S from './styles'
 import { Field } from '../../styles'
-import * as enums from '../../ultils/enums/Contact'
-import { register } from '../../store/reducers/contact'
 
 export const Form = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
+
   const [name, setName] = useState('')
   const [phoneNumber, setPhoneNumber] = useState('')
   const [email, setEmail] = useState('')
@@ -51,11 +56,11 @@ export const Form = () => {
       <S.Formcontainer onSubmit={registerAccountant}>
         <S.ImageContainer>
           {image ? (
-            <Image src={image} alt="Imagem do contado" />
+            <Image src={image} alt="Imagem do contato" />
           ) : (
             <Image
               src="https://t4.ftcdn.net/jpg/05/09/59/75/360_F_509597532_RKUuYsERhODmkxkZd82pSHnFtDAtgbzJ.jpg"
-              alt="Imagem do contado"
+              alt="Imagem do contato"
             />
           )}
           <S.AddImageBtn
@@ -69,21 +74,24 @@ export const Form = () => {
           onChange={(e) => setName(e.target.value)}
           type="text"
           placeholder="Nome Completo"
+          required
         />
-        <S.NumberInputMask>
-          <InputMask
-            mask="(99)99999-9999"
-            maskChar={null}
-            value={phoneNumber}
-            onChange={(e) => setPhoneNumber(e.target.value)}
-            placeholder="Numero do Telefone"
-          />
-        </S.NumberInputMask>
+
+        <NumberInputMask
+          mask="(99)99999-9999"
+          maskChar={null}
+          value={phoneNumber}
+          onChange={(e) => setPhoneNumber(e.target.value)}
+          placeholder="Numero do Telefone"
+          required
+        />
+
         <Field
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           type="email"
           placeholder="E-mail"
+          required
         />
         <S.Options>
           <p>Grupo</p>

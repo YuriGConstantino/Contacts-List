@@ -51,22 +51,3 @@ export const AddImageBtn = styled.input`
     border-radius: 8px;
   }
 `
-export const NumberInputMask = styled.div`
-  input {
-    margin-bottom: 16px;
-    border: 0;
-    border-bottom: 2px solid white;
-    outline: 0;
-    color: #eee;
-    font-weight: bold;
-    padding: 8px 0;
-    background: transparent;
-    letter-spacing: 1px;
-    text-shadow: 1px 1px 6px black;
-    width: 100%;
-
-    &::placeholder {
-      color: #eee;
-    }
-  }
-`

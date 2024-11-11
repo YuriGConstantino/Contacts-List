@@ -12,7 +12,7 @@ function App() {
       element: <Home />
     },
     {
-      path: 'newcontact',
+      path: 'RegisterAndEdit',
       element: <Register />
     }
   ])

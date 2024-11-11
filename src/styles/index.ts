@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components'
+import InputMask from 'react-input-mask'
 import variaveis from './variaveis'
 
 const GlobalStyle = createGlobalStyle`
@@ -24,6 +25,7 @@ export const MainContainer = styled.main`
   color: #eee;
 `
 export const Field = styled.input`
+  width: 100%;
   padding: 8px;
   margin-bottom: 16px;
   border: 0;
@@ -66,5 +68,22 @@ export const Button = styled.button`
 export const SalveButton = styled(Button)`
   background-color: ${variaveis.green};
   text-shadow: 1px 1px 5px #000000a3;
+`
+export const NumberInputMask = styled(InputMask)`
+  margin-bottom: 16px;
+  border: 0;
+  border-bottom: 2px solid white;
+  outline: 0;
+  color: #eee;
+  font-weight: bold;
+  padding: 8px 0;
+  background: transparent;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 6px black;
+  width: 100%;
+
+  &::placeholder {
+    color: #eee;
+  }
 `
 export default GlobalStyle

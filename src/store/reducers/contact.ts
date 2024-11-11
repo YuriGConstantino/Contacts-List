@@ -23,6 +23,14 @@ const contactSlice = createSlice({
         (contact) => contact.id !== action.payload
       )
     },
+    edit: (state, action: PayloadAction<Contact>) => {
+      const contactIndex = state.itens.findIndex(
+        (c) => c.id === action.payload.id
+      )
+      if (contactIndex >= 0) {
+        state.itens[contactIndex] = action.payload
+      }
+    },
     register: (state, action: PayloadAction<Omit<Contact, 'id'>>) => {
       const existingAccount = state.itens.find(
         (contact) =>
@@ -43,5 +51,5 @@ const contactSlice = createSlice({
   }
 })
 
-export const { remove, register } = contactSlice.actions
+export const { remove, edit, register } = contactSlice.actions
 export default contactSlice.reducer
