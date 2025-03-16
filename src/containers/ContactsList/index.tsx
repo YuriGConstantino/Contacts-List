@@ -30,6 +30,13 @@ const ContactsList = () => {
   }
   return (
     <MainContainer>
+      <button
+        className="menu_btn"
+        onClick={() => {
+          document.querySelector('aside')?.classList.toggle('active')
+          document.querySelector('.menu_btn')?.classList.toggle('active')
+        }}
+      ></button>
       <S.ListContainer>
         {filterContact().map((c) => (
           <li key={c.name}>

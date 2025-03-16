@@ -52,6 +52,13 @@ export const Form = () => {
 
   return (
     <MainContainer>
+      <button
+        className="menu_btn"
+        onClick={() => {
+          document.querySelector('aside')?.classList.toggle('active')
+          document.querySelector('.menu_btn')?.classList.toggle('active')
+        }}
+      ></button>
       <S.Name>Novo Cadastro</S.Name>
       <S.Formcontainer onSubmit={registerAccountant}>
         <S.ImageContainer>

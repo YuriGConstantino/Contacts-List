@@ -1,3 +1,4 @@
+import { devices } from '../../styles/index'
 import styled from 'styled-components'
 import variaveis from '../../styles/variaveis'
 
@@ -30,6 +31,10 @@ export const Options = styled.div`
 export const Option = styled.div`
   display: inline;
   text-transform: capitalize;
+  @media screen and (max-width: ${devices.mobile}) {
+    display: inline-block;
+    margin: 8px 0;
+  }
 `
 export const ImageContainer = styled.div`
   margin-bottom: 24px;

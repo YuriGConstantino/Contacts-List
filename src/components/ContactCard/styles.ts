@@ -3,7 +3,6 @@ import variaveis from '../../styles/variaveis'
 
 import * as enums from '../../ultils/enums/Contact'
 import { Button } from '../../styles'
-import { Link } from 'react-router-dom'
 
 type $groupProps = {
   $group?: enums.$group
